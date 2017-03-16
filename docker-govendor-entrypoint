@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Install dependencies into the GOPATH.
+go-wrapper download
+
+# Lets do some vendoring!
+govendor init
+govendor add +external
+govendor sync -v
